@@ -8,6 +8,6 @@ setup(name='direct-downloader',
       author_email='fmarkus@mailbox.org',
       license='MIT',
       packages=['direct_downloader'],
-      scripts=['bin/direct-downloader.py'],
+      scripts=['bin/direct-downloader'],
       install_requires=['requests'],
       zip_safe=False)
