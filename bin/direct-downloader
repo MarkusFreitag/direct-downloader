@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+"""CLI tool to handle sharing links from various filehoster."""
+
+import argparse
+from direct_downloader.yandexdisk import YandexDisk
+from direct_downloader.googledrive import GoogleDrive
+
+YADISK = ['yadi.sk']
+GDRIVE = ['drive.google']
+
+parser = argparse.ArgumentParser()
+parser.add_argument('sharing_link', action='store', nargs='+', help='')
+parser.add_argument('-p', '--print', action='store_true', default=False, help='')
+parser.add_argument('-s', '--separator', action='store', default=' ', help='')
+
+try:
+    args = parser.parse_args()
+    for link in args.sharing_link:
+        if any(w in link for w in YADISK):
+            handler = YandexDisk(link)
+        elif any(w in link for w in GDRIVE):
+            handler = GoogleDrive(link)
+        handler.process(print_only=args.print)
+except KeyboardInterrupt:
+    print('\naborted by user')
+    exit()
