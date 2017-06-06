@@ -5,6 +5,7 @@ Get direct links for files located at different file hoster.
 ## Supported filehoster
 + GoogleDrive
 + YandexDisk
++ OneDrive
 
 ## Installation
 ```
