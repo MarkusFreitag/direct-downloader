@@ -13,7 +13,6 @@ ONEDRIVE = ['1drv.ms']
 parser = argparse.ArgumentParser()
 parser.add_argument('sharing_link', action='store', nargs='+', help='')
 parser.add_argument('-p', '--print', action='store_true', default=False, help='')
-parser.add_argument('-s', '--separator', action='store', default=' ', help='')
 
 try:
     args = parser.parse_args()
