@@ -2,7 +2,7 @@
 
 import re
 import requests as req
-from direct_downloader.model import FileHoster
+from .model import FileHoster
 
 
 class GoogleDrive(FileHoster):

@@ -2,7 +2,7 @@
 
 import re
 import requests as req
-from direct_downloader.model import FileHoster
+from .model import FileHoster
 
 
 class OneDrive(FileHoster):
@@ -18,7 +18,7 @@ class OneDrive(FileHoster):
         """
         rgx = re.compile(r'(s\![a-zA-Z0-9]{30})')
         sharing_id = rgx.findall(self.sharing_link)[0]
-        
+
         shared_items = req.get(self.URL.format(sharing_id)).json()['children']
         if len(shared_items) == 1:
             self.filename = shared_items[0]['name']

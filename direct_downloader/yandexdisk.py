@@ -1,7 +1,7 @@
 """Submodule of direct_downloader, provides a YandexDisk wrapper class."""
 
 import requests as req
-from direct_downloader.model import FileHoster
+from .model import FileHoster
 
 
 class YandexDisk(FileHoster):

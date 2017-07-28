@@ -4,7 +4,7 @@ import cgi
 import requests as req
 import sys
 from abc import ABC, abstractmethod
-from direct_downloader.format import sizeof_fmt
+from .format import sizeof_fmt
 
 
 class FileHoster(ABC):
