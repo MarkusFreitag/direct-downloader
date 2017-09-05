@@ -5,10 +5,12 @@ import argparse
 from direct_downloader.yandexdisk import YandexDisk
 from direct_downloader.googledrive import GoogleDrive
 from direct_downloader.onedrive import OneDrive
+from direct_downloader.syncplicity import Syncplicity
 
 YADISK = ['yadi.sk']
 GDRIVE = ['drive.google']
 ONEDRIVE = ['1drv.ms']
+SYNCPLICITY = ['my.syncplicity.com']
 
 parser = argparse.ArgumentParser()
 parser.add_argument('sharing_link', action='store', nargs='+', help='')
@@ -23,6 +25,8 @@ try:
             handler = GoogleDrive(link)
         elif any(w in link for w in ONEDRIVE):
             handler = OneDrive(link)
+        elif any(w in link for w in SYNCPLICITY):
+            handler = Syncplicity(link)
         handler.process(print_only=args.print)
 except KeyboardInterrupt:
     print('\naborted by user')
