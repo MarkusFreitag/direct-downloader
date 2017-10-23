@@ -16,7 +16,7 @@ class OneDrive(FileHoster):
         Args:
             print_only (bool): the direct link will be printed instead of downloaded
         """
-        rgx = re.compile(r'(s\![a-zA-Z0-9]{30})')
+        rgx = re.compile(r'(s\![a-zA-Z0-9]+)')
         sharing_id = rgx.findall(self.sharing_link)[0]
 
         shared_items = req.get(self.URL.format(sharing_id)).json()['children']
