@@ -2,7 +2,7 @@
 from setuptools import setup
 
 setup(name='direct-downloader',
-      version='1.2.0',
+      version='1.2.1',
       description='Get direct links for files located at different file hoster.',
       author='Markus Freitag',
       author_email='fmarkus@mailbox.org',
