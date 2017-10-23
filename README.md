@@ -6,6 +6,7 @@ Get direct links for files located at different file hoster.
 + GoogleDrive
 + YandexDisk
 + OneDrive
++ Syncplicity
 
 ## Installation
 ```
