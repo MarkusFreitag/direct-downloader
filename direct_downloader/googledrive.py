@@ -16,7 +16,8 @@ class GoogleDrive(FileHoster):
         Args:
             print_only (bool): the direct link will be printed instead of downloaded
         """
-        rgx = re.compile("([a-zA-Z0-9]{28})")
+#        rgx = re.compile("([a-zA-Z0-9]{28})")
+        rgx = re.compile("d/(.*?)/view")
         file_id = rgx.findall(self.sharing_link)[0]
         session = req.Session()
         response = session.get(self.URL, params={'id': file_id}, stream=True)
